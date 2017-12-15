@@ -1,0 +1,33 @@
+{
+  "name": "d3-template",
+  "version": "2.0.0",
+  "description": "D3js templates plugin",
+  "keywords": [
+    "d3",
+    "d3-module",
+    "d3-template",
+    "template"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "build/d3-template.js",
+  "jsnext:main": "index",
+  "homepage": "https://github.com/jkutianski/d3.template.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkutianski/d3.template/tree/d3v4"
+  },
+  "scripts": {
+    "pretest": "node ./scripts/mkbuild.js && rollup -f umd -n d3 -o build/d3-template.js -- index.js",
+    "test": "tape test/**/*-test.js",
+    "prepublish": "npm run test && uglifyjs build/d3-template.js -c -m -o build/d3-template.min.js",
+    "postpublish": "zip -j build/d3-template.zip -- LICENSE README.md build/d3-template.js build/d3-template.min.js"
+  },
+  "devDependencies": {
+    "rollup": "0.27",
+    "tape": "4",
+    "uglify-js": "2",
+    "handlebars": "4",
+    "jsdom": "11",
+    "d3-selection": "1"
+  }
+}

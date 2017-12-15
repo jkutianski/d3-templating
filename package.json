@@ -1,6 +1,6 @@
 {
   "name": "d3-templating",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "D3js templates plugin",
   "keywords": [
     "d3",
@@ -19,8 +19,7 @@
   "scripts": {
     "pretest": "node ./scripts/mkbuild.js && rollup -f umd -n d3 -o build/d3-template.js -- index.js",
     "test": "tape test/**/*-test.js",
-    "prepublish": "npm run test && uglifyjs build/d3-template.js -c -m -o build/d3-template.min.js",
-    "postpublish": "zip -j build/d3-template.zip -- LICENSE README.md build/d3-template.js build/d3-template.min.js"
+    "prepublish": "npm run test && uglifyjs build/d3-template.js -c -m -o build/d3-template.min.js"
   },
   "devDependencies": {
     "rollup": "0.27",

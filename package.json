@@ -1,6 +1,6 @@
 {
   "name": "d3-templating",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "D3js templates plugin",
   "keywords": [
     "d3",
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/jkutianski/d3-templating.git",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkutianski/d3-templating/tree/d3v4"
+    "url": "https://github.com/jkutianski/d3-templating"
   },
   "scripts": {
     "pretest": "node ./scripts/mkbuild.js && rollup -f umd -n d3 -o build/d3-template.js -- index.js",

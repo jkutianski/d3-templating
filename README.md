@@ -10,7 +10,7 @@ Install
 To install via NPM use `npm install d3-templating`. You can also load directly from [unpkg.com](https://unpkg.com/d3-templating/).
 
 ```html
-<script src="https://unpkg.com/d3-templating/"></script>
+<script src="https://unpkg.com/d3-templating/build/d3-template.min.js"></script>
 ```
 
 Template

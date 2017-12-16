@@ -1,6 +1,6 @@
 d3-templating
 ==========
-*(This version is tested on d3.js v3.x and v4.x)*
+*(This version is tested on d3.js v2.x, v3.x and v4.x)*
 
 d3-templating is based on [my previous solution](http://bl.ocks.org/jkutianski/7556191) of [John Berryman's attempt](http://bl.ocks.org/JnBrymn/2295155) to use templating.
 This version support template compilation engines as [`Handlebars`](http://handlebarsjs.com/), [`Mustache`](https://mustache.github.io/), [`Hogan`](http://twitter.github.io/hogan.js/) and probably others.

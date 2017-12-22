@@ -64,7 +64,7 @@ Mozilla Nunjucks
 ----------------
 ```
 var template = d3.select('#template').node().innerHTML;
-var compiledTemplate = nunjucks.compile(clockTemplateSVG);
+var compiledTemplate = nunjucks.compile(template);
 
 d3.select('#node').call(
     d3.template(function (d) {

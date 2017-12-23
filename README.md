@@ -72,3 +72,15 @@ d3.select('#node').call(
     })
 );
 ```
+doT
+---
+```
+var template = d3.select('#template').node().innerHTML;
+var compiledTemplate = doT.template(template);
+
+d3.select('#node').call(
+    d3.template(function (d) {
+        return compiledTemplate(d);
+    })
+);
+```

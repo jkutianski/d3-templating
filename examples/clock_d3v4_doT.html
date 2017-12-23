@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D3 World Clock</title>
+    <script src="http://d3js.org/d3.v4.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/dot/doT.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/d3-templating/build/d3-template.min.js"></script>
+</head>
+
+<body>
+    <template id="clock" type="text/html" style="display: none;">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+            <g id="_Clock" transform="translate(-0.1 -1.5)">
+                <g>
+                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="2349.1309" y1="4306.4551" x2="2442.1309" y2="4306.4551" gradientTransform="matrix(1 0 0 1 -2347.8008 -4255.7031)">
+                        <stop offset="0.0013" style="stop-color:#0A0A0A" />
+                        <stop offset="0.4909" style="stop-color:#1E2423" />
+                        <stop offset="1" style="stop-color:#0D0D0D" />
+                    </linearGradient>
+                    <path fill="url(#SVGID_1_)" stroke="#B7B7B7" d="M47.829,4.253c25.683,0,46.501,20.814,46.501,46.499
+              c0,25.684-20.818,46.5-46.501,46.5c-25.684,0-46.499-20.816-46.499-46.5C1.33,25.068,22.145,4.253,47.829,4.253z" />
+                    <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2356.1309" y1="4306.4551" x2="2435.1309" y2="4306.4551" gradientTransform="matrix(1 0 0 1 -2347.8008 -4255.7031)">
+                        <stop offset="0.0013" style="stop-color:#0A0A0A" />
+                        <stop offset="0.4909" style="stop-color:#1E2423" />
+                        <stop offset="1" style="stop-color:#0D0D0D" />
+                    </linearGradient>
+                    <path fill="url(#SVGID_2_)" stroke="#B7B7B7" stroke-width="0.5" d="M47.829,11.253c21.813,0,39.501,17.684,39.501,39.499
+              c0,21.813-17.688,39.5-39.501,39.5c-21.815,0-39.499-17.688-39.499-39.5C8.33,28.937,26.014,11.253,47.829,11.253z" />
+                </g>
+                <g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M43.971,11.905c0.07,0.663,0.14,1.326,0.211,1.99" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M39.913,12.525c0.139,0.65,0.277,1.305,0.416,1.957" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M35.665,13.635c0.203,0.633,0.41,1.269,0.617,1.9" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M32.018,15.072c0.281,0.606,0.559,1.214,0.838,1.818" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M24.546,19.478c0.393,0.539,0.784,1.079,1.178,1.618" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M21.439,22.214c0.445,0.494,0.893,0.991,1.339,1.486" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M18.315,25.298c0.492,0.446,0.989,0.894,1.484,1.337" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M15.876,28.367c0.547,0.384,1.091,0.772,1.635,1.156" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M12.018,35.092c0.609,0.271,1.219,0.542,1.829,0.813" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M10.695,39.015c0.632,0.205,1.269,0.412,1.902,0.618" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M9.532,43.248c0.65,0.141,1.304,0.279,1.955,0.416" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M8.954,47.125c0.665,0.06,1.331,0.123,1.994,0.184" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M9.109,55.129c0.663-0.07,1.327-0.14,1.99-0.211" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M9.925,59.188c0.65-0.139,1.305-0.271,1.957-0.416" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M11.034,63.436c0.633-0.203,1.269-0.41,1.901-0.617" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M12.473,67.082c0.605-0.281,1.214-0.559,1.818-0.838" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M16.877,74.382c0.538-0.394,1.079-0.784,1.617-1.178" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M19.613,77.488c0.494-0.445,0.991-0.895,1.486-1.34" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M22.698,80.613c0.446-0.493,0.894-0.99,1.337-1.485" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M25.766,83.051c0.384-0.546,0.771-1.091,1.156-1.634" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M32.191,86.434c0.27-0.604,0.542-1.219,0.812-1.828" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M36.113,87.756c0.205-0.633,0.412-1.27,0.618-1.902" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M40.348,88.92c0.14-0.65,0.278-1.305,0.415-1.955" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M44.224,89.496c0.06-0.664,0.123-1.33,0.185-1.992" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M52.455,89.494c-0.071-0.663-0.141-1.327-0.211-1.988" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M56.514,88.678c-0.14-0.65-0.277-1.305-0.416-1.955" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M60.764,87.57c-0.205-0.635-0.412-1.271-0.619-1.901" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M64.355,86.042c-0.279-0.604-0.563-1.213-0.836-1.817" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M70.818,82.135c-0.396-0.539-0.784-1.08-1.178-1.617" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M77.21,76.589c-0.494-0.446-0.989-0.894-1.485-1.338" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M74.049,79.611c-0.445-0.493-0.893-0.99-1.339-1.484" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M79.559,73.469c-0.545-0.384-1.09-0.771-1.634-1.154" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M83.305,66.596c-0.604-0.271-1.219-0.543-1.826-0.813" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M86.068,58.598c-0.651-0.139-1.305-0.277-1.957-0.416" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M84.842,62.797c-0.633-0.205-1.27-0.412-1.902-0.617" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M86.541,54.722c-0.663-0.061-1.328-0.124-1.991-0.185" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M86.455,46.475c-0.662,0.07-1.327,0.139-1.988,0.21" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M84.85,38.166c-0.633,0.206-1.269,0.412-1.896,0.618" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M85.887,42.417c-0.65,0.139-1.304,0.278-1.955,0.417" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M83.32,34.574c-0.604,0.279-1.211,0.557-1.815,0.835" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M79.41,28.023c-0.539,0.392-1.08,0.784-1.617,1.176" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M73.865,21.63c-0.445,0.495-0.893,0.991-1.338,1.486" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M76.889,24.793c-0.494,0.446-0.99,0.893-1.484,1.339" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M70.746,19.284c-0.385,0.544-0.771,1.088-1.156,1.632" />
+                    </g>
+                    <g>
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M64.105,15.486c-0.271,0.609-0.541,1.218-0.813,1.827" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M56.107,12.722c-0.144,0.652-0.276,1.304-0.416,1.956" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M60.309,13.949c-0.205,0.634-0.412,1.27-0.617,1.902" />
+                        <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M52.093,12.004c-0.062,0.664-0.124,1.328-0.186,1.991" />
+                        <g id="Layer_3_copy_5">
+                            <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M86.6,50.753c-0.666-0.001-1.334,0-2,0" />
+                        </g>
+                    </g>
+                    <g id="Layer_3_copy_3">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M28,17.134c0.333,0.577,0.667,1.155,1,1.732" />
+                    </g>
+                    <g id="Layer_3_copy_11">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M15.566,32.5c-0.577-0.334-1.155-0.667-1.732-1" />
+                    </g>
+                    <g id="Layer_3_copy_10">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M10.8,50.753c-0.667-0.001-1.334,0-2,0" />
+                    </g>
+                    <g id="Layer_3_copy_8">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M16.27,70c-0.577,0.333-1.155,0.667-1.732,1" />
+                    </g>
+                    <g id="Layer_3_copy_9">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M30,83.232c-0.333,0.578-0.667,1.156-1,1.729" />
+                    </g>
+                    <g id="Layer_3_copy">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M47.83,87.7c0,0.665,0,1.334,0,2" />
+                    </g>
+                    <g id="Layer_3_copy_7">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M68,84.066c-0.333-0.58-0.667-1.157-1-1.732" />
+                    </g>
+                    <g id="Layer_3_copy_6">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M81.506,70.283c-0.578-0.336-1.156-0.668-1.732-1" />
+                    </g>
+                    <g id="Layer_3_copy_4">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M81.506,31.5c-0.578,0.333-1.154,0.667-1.732,1" />
+                    </g>
+                    <g id="Layer_3_copy_2">
+                        <path fill="none" stroke="#FFFFFF" stroke-width="0.5" d="M67.5,17.134c-0.334,0.577-0.667,1.155-1,1.732" />
+                    </g>
+                    <path fill="#FCFCFC" stroke="#FFFFFF" stroke-width="0.5" d="M47.83,11.7c0,0.667,0,1.333,0,2" />
+                </g>
+                <g>
+                    <circle fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" cx="30.5" cy="21" r="1.75" />
+                    <circle fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" cx="18.1" cy="33.75" r="1.75" />
+                    <circle fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" cx="18.833" cy="68.9" r="1.75" />
+                    <circle fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" cx="31.5" cy="81" r="1.75" />
+                    <circle fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" cx="65.5" cy="80.3" r="1.75" />
+                    <circle fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" cx="77.5" cy="68" r="1.75" />
+                    <circle fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" cx="65" cy="21" r="1.75" />
+                    <circle fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" cx="77.333" cy="33.75" r="1.75" />
+                    <polygon fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" points="47.9,14.745 50.9,14.745 49.4,19 47.9,23.255 46.4,19 
+              44.9,14.745   " />
+                    <rect x="11.833" y="49.717" fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" width="8.75" height="2.166" />
+                    <rect x="74.875" y="49.717" fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" width="8.75" height="2.166" />
+                    <rect x="46.747" y="78.125" fill="#FCFCFC" stroke="#C9C9C9" stroke-width="0.25" width="2.166" height="8.75" />
+                </g>
+                <g>
+                    <polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" points="47.82,6.32 51.318,6.32 49.57,8.26 47.82,10.2 46.07,8.26 
+              44.32,6.32  " />
+                    <circle fill="#FFFFFF" stroke="#020202" stroke-width="0.25" cx="47.9" cy="8.261" r="2" />
+                </g>
+                <g>
+                    <rect x="69.069" y="11.319" transform="matrix(0.8659 0.5001 -0.5001 0.8659 16.2869 -33.072)" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.25" width="1.534" height="5.053" />
+                    <rect x="88.273" y="49.987" fill="#FFFFFF" width="5.053" height="1.532" />
+                    <rect x="2.474" y="49.987" fill="#FFFFFF" width="5.052" height="1.532" />
+                    <rect x="26.155" y="85.975" transform="matrix(0.8654 0.5011 -0.5011 0.8654 47.9685 -1.5778)" fill="#FFFFFF" width="1.532" height="5.05" />
+                    <rect x="25.579" y="11.108" transform="matrix(0.8666 -0.4991 0.4991 0.8666 -3.2887 14.9671)" fill="#FFFFFF" width="1.533" height="5.053" />
+                </g>
+                <g id="Numbers">
+                    <g>
+                        <path fill="#FFFFFF" d="M10.286,26.803c-0.151,0.262-0.308,0.645-0.224,0.841c0.096,0.22,0.468,0.397,0.715,0.581
+                c0.381,0.284,1.366,0.808,1.764,0.942c0.35,0.119,0.458-0.042,0.692-0.334c0.125-0.156,0.429-0.662,0.501-0.859
+                c0.122-0.333,0.234-0.532-0.028-0.765c-0.213-0.19-0.511-0.391-0.8-0.559l-0.691-0.399c-0.271-0.156-0.76-0.406-0.995-0.442
+                c-0.274-0.043-0.534,0.3-0.711,0.608L10.286,26.803L10.286,26.803z M9.908,26.612l0.258-0.446c0.234-0.406,0.61-0.892,0.951-0.873
+                c0.325,0.016,0.946,0.316,1.338,0.542l0.67,0.387c0.38,0.22,1.003,0.636,1.128,0.907c0.147,0.324-0.022,0.858-0.272,1.292
+                l-0.223,0.386c-0.267,0.463-0.709,0.953-1.113,0.876c-0.442-0.083-1.041-0.414-1.545-0.705c-0.5-0.289-1.05-0.6-1.383-0.96
+                c-0.188-0.203-0.198-0.371-0.134-0.642C9.635,27.159,9.771,26.849,9.908,26.612z" />
+                        <path fill="#FFFFFF" d="M10.225,32.408c0.597,0.345,0.81,0.249,1.152-0.343l0.236-0.409c0.376-0.653,0.269-0.88-0.38-1.254
+                l-0.337-0.195c-0.566-0.327-0.849-0.206-1.174,0.357L9.54,30.88c-0.104,0.18-0.184,0.396-0.211,0.558
+                c-0.013,0.071-0.015,0.18,0,0.25c0.014,0.066,0.111,0.19,0.096,0.216l-0.212,0.368l-1.922-1.11l1.47-2.546l0.368,0.213
+                l-1.223,2.118l1.112,0.67c-0.004-0.075-0.035-0.135-0.041-0.232c-0.005-0.08,0.006-0.16,0.023-0.248
+                c0.032-0.156,0.114-0.373,0.211-0.541l0.177-0.307c0.438-0.758,0.961-0.959,1.719-0.522l0.358,0.207
+                c0.892,0.515,1.039,0.989,0.522,1.883l-0.225,0.389c-0.413,0.716-0.846,1.106-1.57,0.688l-0.245-0.142l0.236-0.409L10.225,32.408z
+                " />
+                    </g>
+                    <g>
+                        <path fill="#FFFFFF" d="M10.244,75.51l3.283,0.43l-1.004-1.752L10.244,75.51L10.244,75.51z M12.892,73.975l1.219,2.112
+                l-0.513,0.295c-0.014,0.011-1.606-0.206-1.758-0.231c-0.178-0.026-1.729-0.219-1.752-0.258l-0.379-0.656l2.564-1.479l-0.332-0.572
+                l0.369-0.215l0.332,0.573l0.862-0.497l0.248,0.432L12.892,73.975z" />
+                        <path fill="#FFFFFF" d="M8.685,72.771c0.155,0.269,0.416,0.604,0.635,0.631c0.245,0.029,0.594-0.213,0.886-0.338
+                c0.449-0.192,1.423-0.801,1.748-1.086c0.285-0.252,0.197-0.438,0.056-0.791c-0.074-0.189-0.369-0.728-0.506-0.894
+                c-0.236-0.272-0.354-0.479-0.697-0.362c-0.279,0.09-0.61,0.254-0.909,0.426l-0.711,0.41c-0.279,0.162-0.754,0.469-0.907,0.653
+                c-0.18,0.228-0.007,0.638,0.176,0.948L8.685,72.771L8.685,72.771z M8.32,73.01l-0.265-0.459c-0.241-0.418-0.48-1.003-0.289-1.297
+                c0.183-0.281,0.769-0.682,1.172-0.914l0.69-0.398c0.392-0.227,1.084-0.563,1.389-0.537c0.366,0.033,0.754,0.466,1.012,0.908
+                l0.23,0.396c0.274,0.477,0.483,1.121,0.207,1.441c-0.302,0.351-0.904,0.716-1.423,1.016c-0.517,0.297-1.076,0.628-1.568,0.738
+                c-0.277,0.064-0.433-0.014-0.641-0.211C8.666,73.534,8.461,73.254,8.32,73.01z" />
+                    </g>
+                    <g>
+                        <path fill="#FFFFFF" d="M50.834,92.42c0-0.275-0.038-0.584-0.208-0.688c-0.127-0.078-0.563-0.111-0.786-0.111h-0.528
+                c-0.602,0-0.859,0.141-0.859,0.75v0.295c0,0.52,0.256,0.662,0.773,0.662h0.798v0.453h-0.503c-0.221,0-0.551,0.025-0.717,0.082
+                c-0.189,0.064-0.265,0.285-0.265,0.533v0.293c0,0.623,0.271,0.688,0.883,0.688h0.503c0.815,0,0.849-0.205,0.849-1.007h0.49v0.258
+                c0,0.386-0.089,0.797-0.308,0.958c-0.222,0.163-0.645,0.232-1.031,0.232h-0.528c-0.805,0-1.362-0.17-1.362-0.981v-0.354
+                c0-0.254,0.056-0.521,0.169-0.666c0.094-0.119,0.383-0.238,0.591-0.238c-0.025-0.021-0.292-0.07-0.354-0.092
+                c-0.091-0.024-0.211-0.09-0.281-0.146c-0.135-0.11-0.212-0.409-0.212-0.657V92.33c0-0.904,0.505-1.145,1.399-1.145h0.515
+                c0.458,0,0.919,0.063,1.187,0.265c0.254,0.188,0.299,0.7,0.299,1.147v0.107h-0.516V92.42H50.834z" />
+                        <path fill="#FFFFFF" d="M45.792,95.451c0.329,0,0.776-0.059,0.915-0.247c0.156-0.208,0.12-0.656,0.159-0.988
+                c0.061-0.513,0.018-1.728-0.072-2.177c-0.079-0.393-0.29-0.409-0.691-0.471c-0.215-0.031-0.858-0.043-1.083-0.004
+                c-0.381,0.063-0.631,0.063-0.707,0.438c-0.062,0.308-0.089,0.692-0.089,1.063v0.867c0,0.34,0.032,0.938,0.123,1.178
+                c0.108,0.283,0.575,0.34,0.961,0.34H45.792L45.792,95.451z M45.818,95.912h-0.562c-0.51,0-1.172-0.092-1.34-0.422
+                c-0.162-0.314-0.217-1.063-0.217-1.557V93.09c0-0.479,0.055-1.293,0.243-1.559c0.223-0.316,0.818-0.446,1.365-0.446h0.484
+                c0.583,0,1.284,0.147,1.432,0.571c0.162,0.464,0.177,1.203,0.177,1.841c0,0.629,0.006,1.315-0.151,1.827
+                c-0.089,0.283-0.242,0.389-0.532,0.479C46.482,95.872,46.115,95.912,45.818,95.912z" />
+                    </g>
+                    <g>
+                        <path fill="#FFFFFF" d="M70.25,88.059c-0.501-0.865-0.135-1.326,0.607-1.852c0.268-0.188,0.764-0.557,0.896-0.766
+                c0.158-0.248-0.135-0.742-0.334-1.086l-2.47,1.424l-0.223-0.385l2.932-1.693l0.429,0.738c0.539,0.937,0.313,1.146-0.426,1.77
+                c-0.304,0.255-0.612,0.452-0.886,0.713c-0.301,0.291-0.282,0.516-0.037,0.941l0.18,0.311c0.307,0.529,0.637,0.561,1.162,0.254
+                l0.396-0.229c0.521-0.303,0.834-0.567,0.521-1.098l-0.254-0.44l0.464-0.269l0.089,0.148c0.262,0.441,0.401,0.824,0.309,1.186
+                c-0.076,0.274-0.524,0.647-0.894,0.857l-0.418,0.241c-0.815,0.479-1.377,0.396-1.854-0.437L70.25,88.059z" />
+                        <path fill="#FFFFFF" d="M68.406,87.041c-0.365-0.635-0.612-0.659-1.243-0.296l-0.435,0.251c-0.694,0.398-0.715,0.667-0.316,1.355
+                l0.206,0.354c0.349,0.604,0.673,0.645,1.271,0.295l0.336-0.189c0.192-0.109,0.383-0.271,0.491-0.4
+                c0.052-0.061,0.11-0.158,0.134-0.229c0.022-0.068,0-0.236,0.026-0.25l0.39-0.228l1.18,2.042l-2.699,1.563l-0.229-0.392
+                l2.248-1.298L69.1,88.411c-0.037,0.069-0.043,0.146-0.086,0.233c-0.039,0.076-0.092,0.146-0.154,0.215
+                c-0.107,0.127-0.303,0.283-0.479,0.388l-0.325,0.188C67.246,89.9,66.657,89.805,66.191,89l-0.219-0.381
+                c-0.552-0.947-0.436-1.461,0.521-2.008l0.411-0.24c0.763-0.438,1.367-0.568,1.813,0.201l0.149,0.262l-0.435,0.251L68.406,87.041z" />
+                    </g>
+                    <g>
+                        <path fill="#FFFFFF" d="M86.13,73.605c0.17-0.293,0.347-0.719,0.251-0.939c-0.107-0.246-0.523-0.443-0.799-0.648
+                c-0.426-0.313-1.527-0.896-1.973-1.053c-0.396-0.133-0.514,0.047-0.771,0.373c-0.141,0.176-0.48,0.742-0.563,0.961
+                c-0.135,0.372-0.262,0.594,0.031,0.854c0.233,0.218,0.565,0.438,0.896,0.625l0.771,0.445c0.303,0.176,0.854,0.452,1.11,0.493
+                c0.308,0.05,0.599-0.336,0.796-0.68L86.13,73.605L86.13,73.605z M86.553,73.82l-0.287,0.496c-0.263,0.455-0.684,0.998-1.063,0.979
+                c-0.364-0.021-1.059-0.354-1.496-0.607l-0.749-0.432c-0.429-0.246-1.122-0.713-1.261-1.016c-0.168-0.361,0.021-0.959,0.304-1.444
+                l0.25-0.431c0.299-0.518,0.793-1.063,1.244-0.979c0.489,0.094,1.163,0.461,1.728,0.781c0.563,0.322,1.174,0.673,1.547,1.072
+                c0.209,0.229,0.225,0.412,0.147,0.718C86.857,73.209,86.704,73.555,86.553,73.82z" />
+                        <path fill="#FFFFFF" d="M86.008,71.186c-0.865-0.5-0.779-1.082-0.398-1.908c0.143-0.297,0.387-0.857,0.396-1.105
+                c0.016-0.292-0.484-0.568-0.832-0.771l-1.426,2.472l-0.391-0.224l1.69-2.938l0.739,0.43c0.938,0.539,0.85,0.84,0.518,1.741
+                c-0.137,0.371-0.305,0.698-0.408,1.063c-0.117,0.398,0.016,0.586,0.438,0.834l0.311,0.18c0.529,0.307,0.83,0.168,1.135-0.359
+                l0.229-0.396c0.305-0.521,0.438-0.905-0.093-1.218l-0.438-0.254l0.271-0.463l0.15,0.088c0.443,0.258,0.764,0.519,0.854,0.871
+                c0.074,0.279-0.128,0.828-0.337,1.192l-0.243,0.417c-0.475,0.82-0.993,1.029-1.815,0.553L86.008,71.186z" />
+                    </g>
+                    <g>
+                        <path fill="#FFFFFF" d="M87.395,29.772c-0.17-0.292-0.453-0.659-0.688-0.686c-0.268-0.031-0.646,0.231-0.962,0.367
+                c-0.486,0.21-1.544,0.872-1.896,1.181c-0.313,0.273-0.22,0.468-0.063,0.856c0.081,0.208,0.399,0.787,0.551,0.965
+                c0.255,0.303,0.386,0.524,0.756,0.401c0.306-0.101,0.664-0.276,0.988-0.463l0.771-0.445c0.303-0.175,0.817-0.51,0.982-0.716
+                c0.193-0.24,0.008-0.686-0.189-1.029L87.395,29.772L87.395,29.772z M87.79,29.514l0.288,0.499
+                c0.262,0.453,0.521,1.087,0.313,1.408c-0.197,0.306-0.834,0.739-1.271,0.992l-0.748,0.433c-0.429,0.246-1.181,0.615-1.513,0.584
+                c-0.396-0.038-0.815-0.5-1.098-0.986l-0.25-0.431c-0.301-0.518-0.523-1.218-0.228-1.567c0.325-0.38,0.979-0.776,1.545-1.102
+                c0.563-0.323,1.168-0.682,1.702-0.803c0.302-0.068,0.47,0.016,0.693,0.229C87.412,28.945,87.637,29.25,87.79,29.514z" />
+                        <path fill="#FFFFFF" d="M84.094,26.133c0.031-0.018,0.854,0.199,0.969,0.211c0.084,0.009,0.949,0.207,0.963,0.229l0.396,0.679
+                l-4.189,2.418l-0.274-0.475l3.815-2.203l-1.793-0.388C83.98,26.553,84.061,26.152,84.094,26.133z" />
+                    </g>
+                </g>
+                <g>
+                    <rect x="72.476" y="15.467" transform="matrix(-0.8112 -0.5848 0.5848 -0.8112 121.8065 73.222)" fill="#FFFFFF" width="0.496" height="2.961" />
+                    <polygon fill="#FFFFFF" points="76.746,18.478 77.119,18.805 75.137,21.005 74.766,20.678   " />
+                    <rect x="78.892" y="21.579" transform="matrix(-0.6707 -0.7417 0.7417 -0.6707 115.1152 97.2259)" fill="#FFFFFF" width="0.495" height="2.962" />
+                    <rect x="81.753" y="25.102" transform="matrix(-0.5879 -0.8089 0.8089 -0.5879 108.7075 108.5429)" fill="#FFFFFF" width="0.495" height="2.962" />
+                </g>
+                <g>
+                    <rect x="52.565" y="7.706" transform="matrix(-0.9946 -0.1036 0.1036 -0.9946 104.3891 23.7943)" fill="#FFFFFF" width="0.495" height="2.961" />
+                    <polygon fill="#FFFFFF" points="57.064,8.503 57.551,8.601 56.934,11.497 56.449,11.399   " />
+                    <rect x="61.178" y="9.794" transform="matrix(-0.9514 -0.3079 0.3079 -0.9514 116.3951 40.9165)" fill="#FFFFFF" width="0.495" height="2.961" />
+                    <rect x="65.424" y="11.419" transform="matrix(-0.914 -0.4057 0.4057 -0.914 120.4627 51.3327)" fill="#FFFFFF" width="0.495" height="2.962" />
+                </g>
+            </g>
+        </svg>
+    </template>
+    <template id="pointers" type="text/html" style="display: none;">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+            <g id="hour" transform="rotate({{=it.hour}} 48 49)">
+                <linearGradient id="SVGID_1_hour" gradientUnits="userSpaceOnUse" x1="46.001" y1="41.8438" x2="50.001" y2="41.8438">
+                    <stop offset="0" style="stop-color:#FFFFFF" />
+                    <stop offset="0.3758" style="stop-color:#000000" />
+                    <stop offset="1" style="stop-color:#ECECEC" />
+                </linearGradient>
+                <path fill="url(#SVGID_1_hour)" stroke="#9B9B9B" stroke-width="0.5" d="M50.001,50.688V33h-4v17.557
+          C47.334,50.592,48.668,50.634,50.001,50.688z" />
+                <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="46.958" y1="41.5737" x2="48.958" y2="41.5737">
+                    <stop offset="0" style="stop-color:#58595B" />
+                    <stop offset="0.4242" style="stop-color:#FFFFFF" />
+                    <stop offset="0.6061" style="stop-color:#F1F0F0" />
+                    <stop offset="1" style="stop-color:#58595B" />
+                </linearGradient>
+                <path fill="url(#SVGID_2_hour)" stroke="#000000" stroke-width="0.25" d="M48.958,50.647V32.996c0-0.274-0.446-0.496-1-0.496
+          c-0.552,0-1,0.222-1,0.496v17.581C47.625,50.599,48.292,50.621,48.958,50.647z" />
+                <g>
+                    <path fill="#050505" stroke="#9B9B9B" stroke-width="0.5" d="M48.173,26.512c0.293,0,0.552,0.036,0.826,0.06L48,21.403
+            l-1.001,5.193C47.372,26.55,47.755,26.512,48.173,26.512z" />
+                    <linearGradient id="SVGID_3_hour" gradientUnits="userSpaceOnUse" x1="47.5161" y1="23.9995" x2="48.481" y2="23.9995">
+                        <stop offset="0" style="stop-color:#58595B" />
+                        <stop offset="0.4242" style="stop-color:#FFFFFF" />
+                        <stop offset="0.6061" style="stop-color:#F1F0F0" />
+                        <stop offset="1" style="stop-color:#58595B" />
+                    </linearGradient>
+                    <path fill="url(#SVGID_3_hour)" d="M48.083,25.212c0.142,0,0.266,0.017,0.398,0.028L48,22.747l-0.484,2.505
+            C47.696,25.23,47.882,25.212,48.083,25.212z" />
+                </g>
+                <g>
+                    <linearGradient id="SVGID_4_hour" gradientUnits="userSpaceOnUse" x1="43" y1="31" x2="53" y2="31">
+                        <stop offset="0" style="stop-color:#58595B" />
+                        <stop offset="0.4242" style="stop-color:#FFFFFF" />
+                        <stop offset="0.6061" style="stop-color:#F1F0F0" />
+                        <stop offset="1" style="stop-color:#58595B" />
+                    </linearGradient>
+                    <circle fill="url(#SVGID_4_hour)" stroke="#9B9B9B" stroke-width="0.5" cx="48" cy="31" r="5" />
+                    <linearGradient id="SVGID_5_hour" gradientUnits="userSpaceOnUse" x1="43.5" y1="31" x2="52.5" y2="31">
+                        <stop offset="0" style="stop-color:#58595B" />
+                        <stop offset="0.4242" style="stop-color:#FFFFFF" />
+                        <stop offset="0.6061" style="stop-color:#F1F0F0" />
+                        <stop offset="1" style="stop-color:#58595B" />
+                    </linearGradient>
+                    <circle fill="url(#SVGID_5_hour)" stroke="#000000" stroke-width="0.5" cx="48" cy="31" r="4.5" />
+                    <linearGradient id="SVGID_6_hour" gradientUnits="userSpaceOnUse" x1="48" y1="33" x2="48" y2="33">
+                        <stop offset="0" style="stop-color:#58595B" />
+                        <stop offset="0.4242" style="stop-color:#FFFFFF" />
+                        <stop offset="0.6061" style="stop-color:#F1F0F0" />
+                        <stop offset="1" style="stop-color:#58595B" />
+                    </linearGradient>
+                    <line fill="url(#SVGID_6_hour)" stroke="#000000" x1="48" y1="30.502" x2="48" y2="35.498" />
+                    <line fill="none" stroke="#000000" x1="44.367" y1="27.701" x2="47.9" y2="31.234" />
+                    <line fill="none" stroke="#000000" x1="51.667" y1="27.701" x2="48.133" y2="31.234" />
+                </g>
+            </g>
+            <g id="minute" transform="rotate({{=it.minute}} 48 49)">
+                <linearGradient id="SVGID_1_min" gradientUnits="userSpaceOnUse" x1="46.001" y1="35.415" x2="50.001" y2="35.415">
+                    <stop offset="0" style="stop-color:#FFFFFF" />
+                    <stop offset="0.3879" style="stop-color:#58595B" />
+                    <stop offset="1" style="stop-color:#E8E8E8" />
+                </linearGradient>
+                <path fill="url(#SVGID_1_min)" stroke="#9B9B9B" stroke-width="0.5" d="M50.001,51.121V19.709h-4v31.409
+          C47.339,51.116,48.669,51.119,50.001,51.121z" />
+                <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="45.999" y1="14" x2="49.999" y2="14">
+                    <stop offset="0" style="stop-color:#58595B" />
+                    <stop offset="0.4242" style="stop-color:#FFFFFF" />
+                    <stop offset="0.6061" style="stop-color:#F1F0F0" />
+                    <stop offset="1" style="stop-color:#58595B" />
+                </linearGradient>
+                <polygon fill="url(#SVGID_2_min)" stroke="#9B9B9B" stroke-width="0.5" points="48,19.358 45.999,19.358 47,13.998 48,8.642 49,13.998 
+          49.999,19.358 " />
+                <linearGradient id="SVGID_3_min" gradientUnits="userSpaceOnUse" x1="46.957" y1="34" x2="48.957" y2="34">
+                    <stop offset="0" style="stop-color:#58595B" />
+                    <stop offset="0.4242" style="stop-color:#FFFFFF" />
+                    <stop offset="0.6061" style="stop-color:#F1F0F0" />
+                    <stop offset="1" style="stop-color:#58595B" />
+                </linearGradient>
+                <path fill="url(#SVGID_3_min)" stroke="#000000" stroke-width="0.25" d="M48.957,47.269c0,0.404-0.445,0.731-0.999,0.731l0,0
+          c-0.552,0-1.001-0.327-1.001-0.731V20.731c0-0.403,0.448-0.731,1.001-0.731l0,0c0.554,0,0.999,0.327,0.999,0.731V47.269z" />
+                <linearGradient id="SVGID_4_min" gradientUnits="userSpaceOnUse" x1="1699.6982" y1="4247.8047" x2="1706.6982" y2="4247.8047" gradientTransform="matrix(1 0 0 1 -1655.1982 -4198.8047)">
+                    <stop offset="0" style="stop-color:#58595B" />
+                    <stop offset="0.4242" style="stop-color:#FFFFFF" />
+                    <stop offset="0.6061" style="stop-color:#F1F0F0" />
+                    <stop offset="1" style="stop-color:#58595B" />
+                </linearGradient>
+                <circle fill="url(#SVGID_4_min)" stroke="#9B9B9B" stroke-width="0.25" cx="48" cy="49" r="3.5" />
+                <radialGradient id="SVGID_5_" cx="48" cy="49" r="2" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" style="stop-color:#FFFFFF" />
+                    <stop offset="1" style="stop-color:#58595B" />
+                </radialGradient>
+                <circle fill="url(#SVGID_5_min)" stroke="#000000" stroke-width="0.25" cx="48" cy="49" r="2" />
+            </g>
+        </svg>
+    </template>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="560px" viewBox="0 0 500 560" enable-background="new 0 0 500 500" xml:space="preserve">
+    </svg>
+</body>
+<script type="text/javascript">
+window.onload = function() {
+    var value = {
+        hour2angle: function(d) {
+            var scale = d3.scaleLinear()
+                .domain([0, 719])
+                .range([0, 359]);
+            return scale(d);
+        },
+        minute2angle: function(d) {
+            var scale = d3.scaleLinear()
+                .domain([0, 60])
+                .range([1, 359]);
+            return scale(d);
+        }
+    };
+
+    var layer1 = d3.select("#Layer_1"),
+        clock1 = layer1.append("g")
+        .attr("transform", "scale(2)"),
+        pointer1 = layer1.append("g")
+        .attr("transform", "scale(2)");
+
+    d3.timer(function() {
+        refreshTime(-3);
+        return false;
+    }, 500);
+
+    var clockTemplateSVG = d3.select('#clock').node().innerHTML,
+        clockTemplate = doT.template(clockTemplateSVG);
+
+    clock1.call(
+        d3.template(function(d) {
+        	console.log(d)
+            return clockTemplate(d);
+        })
+    );
+
+    var pointerTemplateSVG = d3.select('#pointers').node().innerHTML,
+        pointerTemplate = doT.template(pointerTemplateSVG);
+
+    pointer1.call(
+        d3.template(function(d) {
+            return pointerTemplate({ hour: 0, minute: 0 });
+        })
+    );
+
+    var pointerHour = pointer1.select("#hour"),
+        pointerMinute = pointer1.select("#minute"),
+        interpolateTime = function() {
+            return;
+        },
+        refreshTime = function(ts) {
+            ts = ts || 0;
+
+            pointerMinute.datum(function() {
+                var date = new Date();
+                return { hour: date.getUTCHours(), minute: date.getUTCMinutes() };
+            });
+
+            pointerHour.datum(function() {
+                return pointerMinute.datum();
+            });
+
+            pointerHour.attr("transform", function(d) {
+                return "rotate(" + value.hour2angle((d.hour + ts) * 60 + d.minute) + " 48 49)"
+            });
+
+            pointerMinute.attr("transform", function(d) {
+                return "rotate(" + value.minute2angle(d.minute) + " 48 49)"
+            });
+
+        };
+
+};
+</script>
+
+</html>

@@ -114,3 +114,15 @@ d3.select('#node').call(
     })
 );
 ```
+Template7
+---------
+```
+var template = d3.select('#template').node().innerHTML;
+var compiledTemplate = Template7.compile(template);
+
+d3.select('#node').call(
+    d3.template(function (d) {
+        return compiledTemplate(d);
+    })
+);
+```

@@ -4,7 +4,7 @@ d3-templating
 *(For Node.js is only supported the D3js v4.x)*
 
 d3-templating is based on [my previous solution](http://bl.ocks.org/jkutianski/7556191) of [John Berryman's attempt](http://bl.ocks.org/JnBrymn/2295155) to use templating.
-This version support template compilation engines as [`Handlebars`](http://handlebarsjs.com/), [`Mustache`](https://mustache.github.io/), [`Twitter Hogan`](http://twitter.github.io/hogan.js/), [`Mozilla Nunjucks`](https://mozilla.github.io/nunjucks/), [`LinkedIn Dust`](http://www.dustjs.com/), [`doT`](https://olado.github.io/doT/), [`Underscore`](http://underscorejs.org/#template) and probably others.
+This version support template compilation engines as [`Handlebars`](http://handlebarsjs.com/), [`Mustache`](https://mustache.github.io/), [`Twitter Hogan`](http://twitter.github.io/hogan.js/), [`Mozilla Nunjucks`](https://mozilla.github.io/nunjucks/), [`LinkedIn Dust`](http://www.dustjs.com/), [`doT`](https://olado.github.io/doT/), [`Underscore`](http://underscorejs.org/#template), [`Template7`](http://idangero.us/template7/) and probably others.
 
 [D3js Clock DEMO](http://bl.ocks.org/jkutianski/0601ad01f560d49a5967)
 

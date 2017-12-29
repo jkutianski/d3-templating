@@ -1,5 +1,10 @@
 d3-templating
 ==========
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f424dd4911324201a86c9543e192c4e6)](https://www.codacy.com/app/jkutianski/d3-templating?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jkutianski/d3-templating&amp;utm_campaign=Badge_Grade)
+
+[![dependencies Status](https://david-dm.org/jkutianski/d3-templating/status.svg)](https://david-dm.org/jkutianski/d3-templating)
+[![devDependencies Status](https://david-dm.org/jkutianski/d3-templating/dev-status.svg)](https://david-dm.org/jkutianski/d3-templating?type=dev)
+
 *(This version is tested on browsers with D3js v2.x, v3.x and v4.x)*
 *(For Node.js is only supported the D3js v4.x)*
 

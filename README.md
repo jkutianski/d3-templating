@@ -14,7 +14,7 @@ This version support template compilation engines as [`Handlebars`](http://handl
 [D3js Clock DEMO](http://bl.ocks.org/jkutianski/0601ad01f560d49a5967)
 
 Install
---------------
+-------
 To install via NPM use `npm install d3-templating`. You can also load directly from [unpkg.com](https://unpkg.com/d3-templating/).
 
 ```html
@@ -22,15 +22,47 @@ To install via NPM use `npm install d3-templating`. You can also load directly f
 ```
 
 Template
---------------
+--------
 *If the template is an SVG you've to add the tag `<svg xmlns="http://www.w3.org/2000/svg">`, like the following example.*
 ```
 <template id="template" type="text/html" style="display: none;">
    <svg xmlns="http://www.w3.org/2000/svg"><text>{{data}}</text></svg>
 </template>
 ```
+How to use
+----------
+
+Node.js
+-------
+```
+const
+    jsdom = require('jsdom'), // JSDOM is required to use D3js
+    Handlebars = require("handlebars"),
+    d3 = Object.assign({}, require("d3-selection"), require("d3-templating"));
+
+var dom = new jsdom.JSDOM('<?xml version="1.0"?><svg version="1.1" xmlns="http://www.w3.org/2000/svg" ></svg>');
+var body = d3.select(dom.window.document.body);
+
+var template = '<svg xmlns="http://www.w3.org/2000/svg" ><circle cx="{{x}}" cy="{{y}}" r="{{r}}"/></svg>';
+var compiledTemplate = Handlebars.compile(template);
+
+var svg = body.select('svg');
+
+var g = svg.selectAll('g')
+    .data([
+        { x: 10, y: 10, r: 10 },
+        { x: 30, y: 30, r: 20 },
+        { x: 60, y: 60, r: 30 },
+        { x: 100, y: 100, r: 40 },
+    ])
+    .enter()
+    .call(d3.template(compiledTemplate));
+
+console.log(body.html())
+```
+
 Handlebars
---------------
+----------
 ```
 var template = d3.select('#template').node().innerHTML;
 var compiledTemplate = Handlebars.compile(template);
@@ -40,7 +72,7 @@ d3.select('#node').call(
 );
 ```
 Mustache
---------------
+--------
 ```
 var template = d3.select('#template').node().innerHTML;
 Mustache.parse(template);

@@ -29,6 +29,6 @@
     "d3-selection": "1"
   },
   "dependencies": {
-    "jsdom": "11"
+    "jsdom": ">=15.1.1"
   }
 }

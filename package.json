@@ -22,13 +22,13 @@
     "prepublish": "npm run test && uglifyjs build/d3-template.js -c -m -o build/d3-template.min.js"
   },
   "devDependencies": {
-    "rollup": "0",
+    "rollup": "1",
     "tape": "4",
     "uglify-js": "3",
     "handlebars": ">=4.0.14",
     "d3-selection": "1"
   },
   "dependencies": {
-    "jsdom": ">=15.1.1"
+    "jsdom": "15"
   }
 }

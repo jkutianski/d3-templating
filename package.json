@@ -19,7 +19,8 @@
   "scripts": {
     "pretest": "node ./scripts/mkbuild.js && rollup -c ./rollup.config.js",
     "test": "tape test/**/*-test.js",
-    "prepublish": "npm run test && uglifyjs build/d3-template.js -c -m -o build/d3-template.min.js"
+    "prepublish": "npm run snyk-protect; npm run test && uglifyjs build/d3-template.js -c -m -o build/d3-template.min.js",
+    "snyk-protect": "snyk protect"
   },
   "devDependencies": {
     "rollup": "1",
@@ -29,6 +30,8 @@
     "d3-selection": "1"
   },
   "dependencies": {
-    "jsdom": "15"
-  }
+    "jsdom": "15",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }

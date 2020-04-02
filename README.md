@@ -5,6 +5,8 @@ d3-templating
 [![dependencies Status](https://david-dm.org/jkutianski/d3-templating/status.svg)](https://david-dm.org/jkutianski/d3-templating)
 [![devDependencies Status](https://david-dm.org/jkutianski/d3-templating/dev-status.svg)](https://david-dm.org/jkutianski/d3-templating?type=dev)
 
+[![Known Vulnerabilities](https://snyk.io/test/github/jkutianski/d3-templating/badge.svg?targetFile=package.json)](https://snyk.io/test/github/jkutianski/d3-templating?targetFile=package.json)
+
 *(This version is tested on browsers with D3js v2.x, v3.x and v4.x)*
 *(For Node.js is only supported the D3js v4.x)*
 

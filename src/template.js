@@ -5,7 +5,7 @@ if (typeof(DOMParser) === 'undefined') { // if DOMParser is not defined then ass
 		var jsdom = require('jsdom'),
 			dom = new jsdom.JSDOM('');
 
-		global.DOMParser = dom.window._core.DOMParser;
+		global.DOMParser = dom.window.DOMParser;
 	})(global);
 }
 

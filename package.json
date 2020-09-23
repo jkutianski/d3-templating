@@ -1,6 +1,6 @@
 {
   "name": "d3-templating",
-  "version": "2.0.23",
+  "version": "2.0.24",
   "description": "D3js templates plugin",
   "keywords": [
     "d3",
@@ -22,13 +22,11 @@
     "prepublish": "npm run test && uglifyjs build/d3-template.js -c -m -o build/d3-template.min.js"
   },
   "devDependencies": {
-    "rollup": "2",
-    "tape": "4",
-    "uglify-js": "3",
-    "handlebars": ">=4.0.14",
-    "d3-selection": "1"
-  },
-  "dependencies": {
-    "jsdom": "16"
+    "d3-selection": ">=1.3.x",
+    "jsdom": ">=16.4.0",
+    "rollup": ">=2.28.1",
+    "tape": ">=4.11.0",
+    "uglify-js": ">=3.10.4",
+    "handlebars": ">=4.7.6"
   }
 }

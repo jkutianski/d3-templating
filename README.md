@@ -1,4 +1,4 @@
-d3-templating
+d3-templating (DEPRECATED)
 ==========
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f424dd4911324201a86c9543e192c4e6)](https://www.codacy.com/app/jkutianski/d3-templating?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jkutianski/d3-templating&amp;utm_campaign=Badge_Grade)
 
